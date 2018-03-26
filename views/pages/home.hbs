@@ -1,5 +1,9 @@
 <div class="inner padding-10">
 
-<p>{{diary}}</p>
 
-</div>
+
+<h2>{{diary.day}}</h2>
+{{#each diary.breakfast}}
+<div class="col-md-9"> {{id}} </div>
+<div class="col-md-3"> {{quantity}} </div>
+{{/each}}
