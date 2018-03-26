@@ -15,6 +15,9 @@ function registerRoutes(app) {
     console.log(dayRequested);
     MongoModels.Diary.find({"day": dayRequested || today}, function (err, r) {
       const todayData = r[0];
+      if (!todayData) {
+        return res.render("pages/error");
+      }
       /**
       * todayData = {
       *   day: "2018-03-26",
@@ -72,9 +75,18 @@ function registerRoutes(app) {
          todayData.dinner = _.map(todayData.dinner, enrichProductsData);
          todayData.supper = _.map(todayData.supper, enrichProductsData);
 
+           const totalKcal =  _.sum(_.map(todayData.breakfast, 'kcal')) +
+           _.sum(_.map(todayData.lunch, 'kcal')) +
+           _.sum(_.map(todayData.dinner, 'kcal')) +
+           _.sum(_.map(todayData.supper, 'kcal'));
+
+
          const data = {
-           diary: todayData
+           diary: todayData,
+           totalKcal: totalKcal
          };
+
+
 
          res.render('pages/home', data);
        });
