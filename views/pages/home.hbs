@@ -13,7 +13,7 @@
     </div>
     </div>
   {{/each}}
-  <button class="btn btn-primary">ADD</button>
+  <button class="btn btn-primary addProduct">ADD</button>
 
 
   <h3>Lunch</h3>
@@ -30,7 +30,18 @@
       {{kcal}} kcal
     </div></div>
   {{/each}}
-  <button class="btn btn-primary">ADD</button>
+  <div class="row">
+    <button class="btn btn-primary addProduct" id="add-lunch-button">+</button>
+    <div class="add-product-data" style="display: none;">
+      <select name="add-product" id="add-lunch-product">
+        <option value="">wybierz produkt</option>
+        <option value="banan">banana</option>
+        <option value="japko">japko</option>
+      </select>
+      <input type="number" id="add-lunch-weight" placeholder="wpisz wagę"/>
+      <button class="btn btn-primary" id="add-lunch-confirm">ADD</button>
+    </div>
+  </div>
 
   <h3>Dinner</h3>
   {{#each diary.dinner}}
@@ -44,7 +55,7 @@
       {{kcal}} kcal
     </div></div>
   {{/each}}
-  <button class="btn btn-primary">ADD</button>
+  <button class="btn btn-primary addProduct">ADD</button>
 
   <h3>Supper</h3>
   {{#each diary.supper}}
@@ -58,5 +69,5 @@
       {{kcal}} kcal
     </div></div>
   {{/each}}
-  <button class="btn btn-primary">ADD</button>
+  <button class="btn btn-primary addProduct">ADD</button>
   <h4>total: {{totalKcal}}</h4>
