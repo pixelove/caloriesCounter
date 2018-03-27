@@ -18,7 +18,29 @@ $(document).ready(function () {
 
         $('#add-lunch-button').show();
         $('.add-product-data').hide();
-        console.log(lunchProduct, lunchWeight);
+        // console.log(lunchProduct, lunchWeight);
+
+        // $('#add-lunch-product').val('');
+        // $('#add-lunch-weight').val('');
+
+
+        let payload = {
+          Product: lunchProduct,
+          Weight: lunchWeight,
+          Meal: "lunch"
+        };
+
+      fetch("/addFood",
+        {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+          method: "POST",
+          body: JSON.stringify(payload)
+        })
+      .then(function(res){ return res; })
+      .then(function(data){ alert( JSON.stringify(data))})
       }
     )
   }

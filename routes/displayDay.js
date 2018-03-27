@@ -77,7 +77,6 @@ function displayDay(req,res) {
            _.sum(_.map(todayData.dinner, 'kcal')) +
            _.sum(_.map(todayData.supper, 'kcal'));
 
-
          const data = {
            diary: todayData,
            totalKcal: totalKcal
