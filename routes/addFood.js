@@ -15,8 +15,8 @@ function addFood(req,res) {
     let selectedMeal = (selectedDay[mealRequested]);
     console.log(selectedMeal);
     let newProduct = {
-      "id" : ObjectId("5ab9275164678352874fd3d2"),
-      "grams" : 100
+      "id" : ObjectId(payload.Product),
+      "grams" : parseInt(payload.Weight)
     };
 
 // zmodyfikowany lunch

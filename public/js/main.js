@@ -40,8 +40,11 @@ $(document).ready(function () {
           method: "POST",
           body: JSON.stringify(payload)
         })
-      .then(function(res){ return res; })
-      .then(function(data){ alert( JSON.stringify(data))})
+      .then(function(res) {
+        // return res;
+        document.location = document.location;
+      })
+      // to do: złap errory
       }
     )
   }
