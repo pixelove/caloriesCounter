@@ -27,7 +27,8 @@ $(document).ready(function () {
         let payload = {
           Product: lunchProduct,
           Weight: lunchWeight,
-          Meal: "lunch"
+          Meal: "lunch",
+          Day: "2018-03-26"
         };
 
       fetch("/addFood",
