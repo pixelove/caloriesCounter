@@ -1,43 +1,58 @@
-<div class="inner padding-10">
+
   <h2>{{diary.day}}</h2>
   <h3>Breakfast</h3>
   {{#each diary.breakfast}}
-    <div class="col-md-9">
+  <div class="row"><div class="col-md-2">
+    <img class="thumb" src="../public/images/{{image}}" />
+  </div>
+    <div class="col-md-7">
       {{name}} ({{grams}}g)
     </div>
     <div class="col-md-3">
       {{kcal}} kcal
+    </div>
     </div>
   {{/each}}
 
+
   <h3>Lunch</h3>
   {{#each diary.lunch}}
-    <div class="col-md-9">
+  <div class="row">
+
+  <div class="col-md-2">
+    <img class="thumb" src="../public/images/{{image}}" />
+  </div>
+    <div class="col-md-7">
       {{name}} ({{grams}}g)
     </div>
     <div class="col-md-3">
       {{kcal}} kcal
-    </div>
+    </div></div>
   {{/each}}
 
   <h3>Dinner</h3>
   {{#each diary.dinner}}
-    <div class="col-md-9">
+  <div class="row"><div class="col-md-2">
+    <img class="thumb" src="../public/images/{{image}}" />
+  </div>
+    <div class="col-md-7">
       {{name}} ({{grams}}g)
     </div>
     <div class="col-md-3">
       {{kcal}} kcal
-    </div>
+    </div></div>
   {{/each}}
 
   <h3>Supper</h3>
   {{#each diary.supper}}
-    <div class="col-md-9">
+  <div class="row"><div class="col-md-2">
+    <img class="thumb" src="../public/images/{{image}}" />
+  </div>
+    <div class="col-md-7">
       {{name}} ({{grams}}g)
     </div>
     <div class="col-md-3">
       {{kcal}} kcal
-    </div>
+    </div></div>
   {{/each}}
   <h4>total: {{totalKcal}}</h4>
-</div>

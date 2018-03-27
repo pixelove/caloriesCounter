@@ -66,6 +66,7 @@ function registerRoutes(app) {
            const currentProduct = _.find(todayDataProducts, {"_id": product.id});
            // console.log(currentProduct);
            product.name = currentProduct.name;
+           product.image = currentProduct.image;
            product.kcal = Math.ceil((currentProduct.calories * product.grams) / 100);
            return product;
          }

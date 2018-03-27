@@ -14,3 +14,11 @@ body {margin-bottom: 40px;}
 #header {background: #1962a0; color: white}
 #content {padding-top: 50px; background: #f9f9f9}
 h1 .thin {opacity:0.25}
+
+
+.thumb {
+  width: 100%;
+  height: 100%;
+  max-width: 32px;
+  max-height: 32px;
+}
